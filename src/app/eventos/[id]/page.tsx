@@ -7,8 +7,9 @@ import { truncateWords } from '@/app/helpers/truncate-word';
 
 
 export async function generateStaticParams() {
-  const { data }: EventRequest = await fetchAPI('/eventos'); 
-  console.log({ data });
+  const response: EventRequest = await fetchAPI('/eventos');
+  if( !response ) return;
+  const { data }  = response;
   if (!data || data.length === 0) {   
     return [];
   }
@@ -19,7 +20,9 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: { locale: string; id: string; } }) {
   const { locale, id } = params;
-  const { data } = await fetchAPI('/eventos/' + id) as SingleEvent; 
+  const response = await fetchAPI('/eventos/' + id) as SingleEvent; 
+  if( !response ) return;
+  const { data } = response;
   const evento: EventoSingle = data; 
 
   const siteUrl = "https://www.tudominio.com"; // IMPORTANTE: Reemplaza con la URL base de tu sitio web
@@ -79,7 +82,9 @@ export async function generateMetadata({ params }: { params: { locale: string; i
 
 
 export default async function EventoDetailPage({ params }: { params: { id: string } }) {
-    const { data }: SingleEvent = await fetchAPI(`/eventos/${params.id}`);
+    const response: SingleEvent = await fetchAPI(`/eventos/${params.id}`);
+    if( !response ) return;
+    const { data } = response;
 
     if (!data) {
     return (

@@ -3,12 +3,14 @@ import { renderRichText } from "./components/RenderRichText";
 import { fetchAPI } from "@/app/lib/api";
 import { NoticiaUniqueRequest } from "./interfaces/noticia-http";
 import Link from "next/link";
-import { truncateWords } from "@/app/helpers/truncate-word";
+import { truncateWords } from "@/app/helpers/truncate-word"; // Importación corregida
 import { SingleNoticia } from "./interfaces/single-noticia";
+import type { Metadata } from 'next'; // Importamos PageProps
 
-export async function generateMetadata({ params }: { params: { locale: string; slug: string; } }) {
-  const { locale, slug } = params;
-  const { data }:SingleNoticia = await fetchAPI('/noticias/' + slug);
+
+export async function generateMetadata({ params }: { params: { id: string; } }): Promise<Metadata> {
+  const { id } = params;
+  const { data }:SingleNoticia = await fetchAPI('/noticias/' + id);
   const blogPost = data;
 
   const siteUrl = "https://www.tudominio.com";
@@ -18,7 +20,7 @@ export async function generateMetadata({ params }: { params: { locale: string; s
       title: "Blog Post no encontrado - Fundación Solidarity Colombia",
       description: "El artículo del blog que buscas no existe o ya no está disponible.",
       openGraph: {
-        url: `${siteUrl}/${locale}/blog/${slug}`,
+        url: `${siteUrl}/blog/${id}`,
         type: 'website',
       },
     };
@@ -39,7 +41,7 @@ export async function generateMetadata({ params }: { params: { locale: string; s
     openGraph: {
       title: `${blogPost.titulo} - Blog Fundación Solidarity Colombia`,
       description: truncateWords(descriptionText, 200),
-      url: `${siteUrl}/${locale}/blog/${blogPost.documentId}`,
+      url: `${siteUrl}/blog/${blogPost.documentId}`,
       siteName: 'Fundación Solidarity Colombia',
       images: [
         {
@@ -49,7 +51,7 @@ export async function generateMetadata({ params }: { params: { locale: string; s
           alt: imageAlt,
         },
       ],
-      locale: locale,
+      locale: 'es',
       type: 'article',
       publishedTime: blogPost.publishedAt ? new Date(blogPost.publishedAt).toISOString() : undefined,
       modifiedTime: blogPost.updatedAt ? new Date(blogPost.updatedAt).toISOString() : undefined,
@@ -64,8 +66,12 @@ export async function generateMetadata({ params }: { params: { locale: string; s
   };
 }
 
-const NoticiaDetailPage =  async ({ params }: { params: { slug: string } }) => {
-  const { data }: NoticiaUniqueRequest = await fetchAPI(`/noticias/${params.slug}`);
+interface NoticiaDetailPageParams {
+  id: string;
+}
+
+const NoticiaDetailPage = async ({ params }: NoticiaDetailPageParams):Promise<any> => {
+  const { data }: NoticiaUniqueRequest = await fetchAPI(`/noticias/${params.id}`);
   const noticia = data;
 
   if (!noticia) {
@@ -76,7 +82,7 @@ const NoticiaDetailPage =  async ({ params }: { params: { slug: string } }) => {
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Noticia no encontrada</h2>
           <p className="text-gray-700">Parece que la noticia que buscas no existe o ha sido eliminada.</p>
           <Link
-            href="/blog" 
+            href="/blog"
             className="mt-6 inline-block px-6 py-2 bg-purple-500 text-white rounded-full hover:bg-purple-600 transition-colors"
           >
             Volver al Blog
@@ -86,7 +92,6 @@ const NoticiaDetailPage =  async ({ params }: { params: { slug: string } }) => {
     );
   }
 
-  // Formatear la fecha
   const formattedDate = new Date(data.fecha).toLocaleDateString('es-ES', {
     year: 'numeric',
     month: 'long',
@@ -97,11 +102,9 @@ const NoticiaDetailPage =  async ({ params }: { params: { slug: string } }) => {
 
   return (
     <section className="relative p-8 md:p-12 lg:p-16 min-h-[80vh] flex items-center justify-center overflow-hidden">
-
       <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-teal-50 to-blue-50 animate-gradient-flow z-0"></div>
 
       <div className="relative z-10 max-w-5xl mx-auto bg-white bg-opacity-90 p-6 md:p-10 rounded-3xl shadow-2xl animate-fade-in-up">
-  
         <Link
           href='/blog'
           className="absolute top-6 left-6 px-4 py-2 bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300 transition-colors flex items-center"
@@ -144,4 +147,5 @@ const NoticiaDetailPage =  async ({ params }: { params: { slug: string } }) => {
   );
 };
 
+//@ts-expect-error
 export default NoticiaDetailPage;

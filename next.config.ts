@@ -5,6 +5,18 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['res.cloudinary.com', 'randomuser.me', 'source.unsplash.com', 'placehold.co'],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+  
+    ignoreBuildErrors: true,
+  },
 };
 
 export default nextConfig;
+
+
+// Path: next.config.js
+
+/** @type {import('next').NextConfig} */

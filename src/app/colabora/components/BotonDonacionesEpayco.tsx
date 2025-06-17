@@ -15,10 +15,9 @@ export default function OpenDonationButton() {
 
   // ** Reemplaza con tus credenciales REALES de Epayco **  // Puedes obtenerlas de tu panel de Epayco (Configuración -> Llaves API)
   const EPAYCO_PUBLIC_KEY = process.env.NEXT_PUBLIC_EPAYCO_PUBLIC_KEY || 'TU_LLAVE_PUBLICA_EPAYCO'; // Asegúrate de usar una variable de entorno
-  const EPAYCO_CLIENT_ID = process.env.NEXT_PUBLIC_EPAYCO_CLIENT_ID || 'TU_ID_CLIENTE_EPAYCO'; // Usualmente tu P_CUST_ID_PAYCO
+  //const EPAYCO_CLIENT_ID = process.env.NEXT_PUBLIC_EPAYCO_CLIENT_ID || 'TU_ID_CLIENTE_EPAYCO'; // Usualmente tu P_CUST_ID_PAYCO
 
   const handleAmountChange = (e: ChangeEvent<HTMLInputElement>) => {
-    // Permite solo números y opcionalmente un punto/coma decimal para valores colombianos
     const value = e.target.value.replace(/[^0-9.]/g, ''); 
     setAmount(value);
   };

@@ -17,7 +17,6 @@ interface CarouselProps {
 }
 
 const Carousel: React.FunctionComponent<CarouselProps> = ({ imgs, hasMultipleImages, navigation } ) => {
-  console.log({ imgs })
   return (
     <Swiper
         modules={[Pagination, Navigation, Autoplay, A11y]} 

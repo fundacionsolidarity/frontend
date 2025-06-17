@@ -76,4 +76,5 @@ export enum ResourceType {
 }
 
 export interface Meta {
+    
 }

@@ -97,7 +97,7 @@ export async function POST(request: Request) {
 
     const orderData = await createOrderResponse.json();
     const orderID = orderData.id;
-    const redirectUrl = orderData.links.find((link: any) => link.rel === 'approve')?.href;
+    const redirectUrl = orderData.links.find((link: { rel: string }) => link.rel === 'approve')?.href;
 
     if (!redirectUrl) {
       throw new Error('No se encontró URL de aprobación en la respuesta de PayPal.');
