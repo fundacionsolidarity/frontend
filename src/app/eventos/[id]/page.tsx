@@ -14,7 +14,7 @@ export async function generateStaticParams() {
     return [];
   }
   return data.map((evento) => ({
-    id: String(evento.id),
+    id: String(evento.documentId),
   }));
 }
 
