@@ -92,7 +92,7 @@ const ContactForm = () => {
                             placeholder="Tu nombre"
                             value={formData.name}
                             onChange={handleChange}
-                            className="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-400 focus:border-transparent outline-none transition-all duration-200 shadow-sm"
+                            className="w-full p-3 border text-black border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-400 focus:border-transparent outline-none transition-all duration-200 shadow-sm"
                             required
                         />
                     </div>
@@ -105,7 +105,7 @@ const ContactForm = () => {
                             placeholder="Tu correo"
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-400 focus:border-transparent outline-none transition-all duration-200 shadow-sm"
+                            className="w-full p-3 border text-black border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-400 focus:border-transparent outline-none transition-all duration-200 shadow-sm"
                             required
                         />
                     </div>
@@ -118,7 +118,7 @@ const ContactForm = () => {
                             rows={5}
                             value={formData.message}
                             onChange={handleChange}
-                            className="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-400 focus:border-transparent outline-none transition-all duration-200 shadow-sm resize-y"
+                            className="w-full p-3 border cursor-pointer text-black border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-400 focus:border-transparent outline-none transition-all duration-200 shadow-sm resize-y"
                             required
                         ></textarea>
                     </div>

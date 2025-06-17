@@ -133,7 +133,7 @@ const ColaboraForm = () => {
                                 placeholder="Tu nombre"
                                 value={volunteerFormData.name}
                                 onChange={handleVolunteerChange}
-                                className="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-400 focus:border-transparent outline-none transition-all duration-200 shadow-sm"
+                                className="w-full p-3 border text-black border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-400 focus:border-transparent outline-none transition-all duration-200 shadow-sm"
                                 required
                             />
                         </div>
@@ -146,7 +146,7 @@ const ColaboraForm = () => {
                                 placeholder="Tu correo"
                                 value={volunteerFormData.email}
                                 onChange={handleVolunteerChange}
-                                className="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-400 focus:border-transparent outline-none transition-all duration-200 shadow-sm"
+                                className="w-full p-3 border text-black border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-400 focus:border-transparent outline-none transition-all duration-200 shadow-sm"
                                 required
                             />
                         </div>
@@ -159,7 +159,7 @@ const ColaboraForm = () => {
                                 rows={5}
                                 value={volunteerFormData.helpMessage}
                                 onChange={handleVolunteerChange}
-                                className="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-400 focus:border-transparent outline-none transition-all duration-200 shadow-sm resize-y"
+                                className="w-full p-3 border text-black border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-400 focus:border-transparent outline-none transition-all duration-200 shadow-sm resize-y"
                                 required
                             ></textarea>
                         </div>
@@ -183,7 +183,7 @@ const ColaboraForm = () => {
                         <button
                             type="submit"
                             disabled={volunteerSubmissionStatus === 'sending'} // Deshabilita el botón mientras se envía
-                            className={`w-full px-8 py-3 bg-gradient-to-r from-blue-600 to-green-600 text-white font-bold text-lg rounded-full shadow-lg
+                            className={`w-full px-8 py-3 bg-gradient-to-r cursor-pointer from-blue-600 to-green-600 text-white font-bold text-lg rounded-full shadow-lg
                                        ${volunteerSubmissionStatus === 'sending' ? 'opacity-60 cursor-not-allowed' : 'hover:from-blue-700 hover:to-green-700 transform hover:scale-105'}
                                        transition-all duration-300 ease-in-out animate-button-bounce`}
                         >

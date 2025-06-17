@@ -3,9 +3,9 @@ import { renderRichText } from "./components/RenderRichText";
 import { fetchAPI } from "@/app/lib/api";
 import { NoticiaUniqueRequest } from "./interfaces/noticia-http";
 import Link from "next/link";
-import { truncateWords } from "@/app/helpers/truncate-word"; // Importación corregida
+import { truncateWords } from "@/app/helpers/truncate-word";
 import { SingleNoticia } from "./interfaces/single-noticia";
-import type { Metadata } from 'next'; // Importamos PageProps
+import type { Metadata } from 'next'; 
 
 
 export async function generateMetadata({ params }: { params: { id: string; } }): Promise<Metadata> {
