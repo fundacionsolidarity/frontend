@@ -94,9 +94,7 @@ const ColaboraForm = () => {
                         <form id="frm_ePaycoCheckoutOpen" 
                                 name="frm_ePaycoCheckoutOpen" 
                                 method="POST" 
-                                action="https://secure.payco.co/checkoutopen.php"
-                                className="flex items-center justify-center p-5 bg-gradient-to-r from-yellow-400 to-green-200 text-white rounded-xl shadow-lg"
-                        >
+                                action="https://secure.payco.co/checkoutopen.php">
                                 
                                 <input name="p_cust_id_cliente" type="hidden" value="1554103"/>
                                 <input name="p_key" type="hidden" value="633d57f2495953d3a6a9179a727ec426e5b9cb44"/>
@@ -105,12 +103,12 @@ const ColaboraForm = () => {
                                 <input name="p_detalle" type="hidden" value="Este pago es para poder donar abiertamente lo que quieras para nuestra causa"/>
                                 <input name="p_referencia" type="hidden" value=""/>
                                 <input name="p_test_request" type="hidden" value="false"/>
-                                <input name="p_url_respuesta" type="hidden" value=""/>
-                                <input name="p_url_confirmacion" type="hidden" value=""/>
-                                <input type="image" id="imagen" src="https://multimedia.epayco.co/dashboard/btns/btn3.png" alt=""/>
+                                <input name="p_url_respuesta" type="hidden" value="https://www.fsolidaritycolombia.org/donacion-exitosa"/>
+                                <input name="p_url_confirmacion" type="hidden" value="https://www.fsolidaritycolombia.org"/>
+                                <input type="image" id="imagen" src="https://multimedia.epayco.co/dashboard/btns/btn5.png" alt=""/>
                                 <input type="hidden" id="idboton" name="idboton" value="0f6335b0-f97c-43eb-9434-890420849021"/>
                                                     
-                        </form>
+                            </form>
                         <PayPalOpenDonationButton />
                     </div>
                 </div>
