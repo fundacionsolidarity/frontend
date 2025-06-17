@@ -34,7 +34,7 @@ export default function EventoPreviewSlider({ evento }: EventoPreviewSliderProps
       className="bg-white flex flex-col cursor-pointer items-center justify-center rounded-2xl shadow-xl p-6 text-center transform transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl animate-fade-in-up "
       style={{ animationDelay: `0.2s` }}
     >
-      <div className=" d-flex justify-centers w-100 md:w-60 lg:w-50 xl:w-60 h-50 mb-2">
+      <div className=" d-flex justify-centers w-72 md:w-60 lg:w-50 xl:w-60 h-50 mb-2">
         <Carousel 
           hasMultipleImages={ hasMultipleImages }
           imgs={ evento.imagen }

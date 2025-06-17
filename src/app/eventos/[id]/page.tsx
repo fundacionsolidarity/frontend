@@ -112,7 +112,7 @@ export default async function EventoDetailPage({ params }: { params: { id: strin
           {data.Titulo || 'Evento sin título'}
         </h2>
         {data.imagen && data.imagen.length > 0 && (
-          <div className="w-full h-72 md:h-96 mb-8 overflow-hidden rounded-2xl shadow-lg">
+          <div className="w-100 h-72 md:h-96 mb-8 overflow-hidden rounded-2xl shadow-lg">
 
             <Carousel 
                 imgs={data.imagen} 
