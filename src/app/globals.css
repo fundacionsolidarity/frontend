@@ -24,3 +24,74 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient-flow {
+  background-size: 400% 400%; /* Más grande para un movimiento suave */
+  animation: gradient-flow 30s ease infinite; /* 30s para un movimiento muy lento */
+}
+
+/* Animaciones para los elementos flotantes en el header */
+@keyframes float-one {
+  0% { transform: translate(0, 0); }
+  30% { transform: translate(10px, 20px); }
+  60% { transform: translate(-5px, 15px); }
+  100% { transform: translate(0, 0); }
+}
+.animate-float-one { animation: float-one 15s ease-in-out infinite; }
+
+@keyframes float-two {
+  0% { transform: translate(0, 0); }
+  40% { transform: translate(-15px, -10px); }
+  80% { transform: translate(5px, 5px); }
+  100% { transform: translate(0, 0); }
+}
+.animate-float-two { animation: float-two 18s ease-in-out infinite; }
+
+@keyframes float-three {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -20px); }
+  100% { transform: translate(0, 0); }
+}
+.animate-float-three { animation: float-three 20s ease-in-out infinite; }
+
+/* Animación de rebote sutil para el logo */
+@keyframes bounce-once {
+  0%, 100% { transform: translateY(0); }
+  20% { transform: translateY(-5px); }
+  40% { transform: translateY(0); }
+}
+.animate-bounce-once { animation: bounce-once 1.5s ease-out; }
+
+/* Animación de pulso ligero para el ícono activo */
+@keyframes pulse-slight {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+.animate-pulse-slight { animation: pulse-slight 2s ease-in-out infinite; }
+
+/* Animación de crecimiento y desvanecimiento para SVGs */
+@keyframes grow-fade-in {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 0.3; }
+}
+.animate-grow-fade-in { animation: grow-fade-in 1.5s ease-out forwards; }
+
+/* Animación de destello/parpadeo para SVG sparkle */
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.1); }
+}
+.animate-sparkle { animation: sparkle 3s ease-in-out infinite; }
+
+/* Animación general de entrada de contenido */
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up { animation: fade-in-up 1s ease-out forwards; }

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import { Header } from "./components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,10 +27,43 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          src="https://www.paypal.com/sdk/js?client-id=BAAZHTTCjDDlunEytfBcZLiNSolbSop5aALBBNWan2G1O0G5UFltU-Ddd4n6gEZQIcIxuveImemmBs5R-U&components=hosted-buttons&disable-funding=venmo&currency=USD"  
+          async
+          data-namespace="paypal_sdk"
+          data-client-id="BAAZHTTCjDDlunEytfBcZLiNSolbSop5aALBBNWan2G1O0G5UFltU-Ddd4n6gEZQIcIxuveImemmBs5R-U"
+          data-merchant-id="9X3Z2K5Q4JY7G"
+          data-currency="USD"
+          data-components="hosted-buttons"
+          data-disable-funding="venmo"
+          data-commit="true"
+          data-intent="capture"
+          data-hosted-button-id="B-2XJY2K5Q4JY7G"
+          data-hosted-button-type="donation"
+          data-hosted-button-style="color:gold;shape:rect;label:donate;size:small;fundingicons:true;locale:en_US"
+          data-hosted-button-image="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
+          data-hosted-button-text="Donate with PayPal"
+          data-hosted-button-text-color="black"
+          data-hosted-button-text-size="small"
+          data-hosted-button-shape="rect"
+          data-hosted-button-color="gold"
+          data-hosted-button-funding-icons="true"
+          data-hosted-button-commit="true"    
+          
+        >
+      </script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="font-sans antialiased bg-gray-50">
+          <Header />
+          <Navbar />
+          <main className="animate-gradient-flow">{children}</main>
+          <Footer />
+        </div>
+      
       </body>
     </html>
   );
