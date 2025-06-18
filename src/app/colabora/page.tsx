@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const keywords = "Fundación Solidarity Colombia, colaborar, donar, donaciones, voluntariado, voluntarios, alianzas, apoyo, impacto social";
 
   const imageUrl = "https://placehold.co/1200x630/FFDDC1/FFFFFF?text=Colabora+FSC";
-  const siteUrl = "https://www.tudominio.com";
+  const siteUrl = "https://www.fsolidaritycolombia.org/";
 
   return {
     title: title,

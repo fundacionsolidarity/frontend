@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const keywords = "Fundación Solidarity Colombia, empoderamiento femenino, educación para niñas, jóvenes vulnerables, proyectos sociales, voluntariado, donaciones, Colombia";
   
   const imageUrl = 'https://placehold.co/1200x630/4CAF50/FFFFFF?text=Fundacion+Solidarity+Colombia'; 
-  const siteUrl = "https://www.tudominio.com"; 
+  const siteUrl = "https://www.fsolidaritycolombia.org/"; 
 
 
   return {

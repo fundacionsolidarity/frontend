@@ -1,9 +1,9 @@
 export interface ResourceHTTP {
-    data: Datum[];
+    data: Recurso[];
     meta: Meta;
 }
 
-export interface Datum {
+export interface Recurso {
     id:          number;
     documentId:  string;
     titulo:      string;

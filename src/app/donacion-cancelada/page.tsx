@@ -8,7 +8,7 @@ export async function generateMetadata() {
   const keywords = "donación cancelada, error donación, Fundación Solidarity Colombia, ayuda, contacto";
   
   const imageUrl = "https://placehold.co/1200x630/FF5733/FFFFFF?text=Donacion+Cancelada"; 
-  const siteUrl = "https://www.tudominio.com"; // 
+  const siteUrl = "https://www.fsolidaritycolombia.org/"; // 
 
   return {
     title: title,

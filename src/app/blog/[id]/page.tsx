@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { renderRichText } from "./components/RenderRichText";
 import { fetchAPI } from "@/app/lib/api";
-import { NoticiaUniqueRequest } from "./interfaces/noticia-http";
+
 import Link from "next/link";
 import { truncateWords } from "@/app/helpers/truncate-word";
 import { SingleNoticia } from "./interfaces/single-noticia";
@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: { id: string; } }):
   const { data }:SingleNoticia = await fetchAPI('/noticias/' + id);
   const blogPost = data;
 
-  const siteUrl = "https://www.tudominio.com";
+  const siteUrl = "https://www.fsolidaritycolombia.org/";
 
   if (!blogPost) {
     return {
@@ -70,8 +70,8 @@ interface NoticiaDetailPageParams {
   id: string;
 }
 
-const NoticiaDetailPage = async ({ params }: NoticiaDetailPageParams):Promise<any> => {
-  const { data }: NoticiaUniqueRequest = await fetchAPI(`/noticias/${params.id}`);
+const NoticiaDetailPage = async (params: NoticiaDetailPageParams):Promise<any> => {
+  const { data }: SingleNoticia = await fetchAPI(`/noticias/${params.id}`);
   const noticia = data;
 
   if (!noticia) {
@@ -147,5 +147,4 @@ const NoticiaDetailPage = async ({ params }: NoticiaDetailPageParams):Promise<an
   );
 };
 
-//@ts-expect-error
 export default NoticiaDetailPage;

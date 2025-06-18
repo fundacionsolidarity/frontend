@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   // const { slug } = params; 
 
   const imageUrl = "https://placehold.co/1200x630/FF8C00/FFFFFF?text=Historias+FSC";
-  const siteUrl = "https://www.tudominio.com"; 
+  const siteUrl = "https://www.fsolidaritycolombia.org/"; 
 
   const title = `Historias que Inspiran - Fundación Solidarity Colombia - `; 
   const description = "Descubre testimonios reales de niñas y jóvenes cuyas vidas han sido transformadas por los programas de la Fundación Solidarity Colombia.";

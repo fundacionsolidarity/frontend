@@ -4,6 +4,7 @@ import Link from 'next/link'; // Importa Link de Next.js para navegación
 import Carousel from '@/app/components/Carousel';
 import { EventoSingle, SingleEvent } from '../interfaces/single-event-http';
 import { truncateWords } from '@/app/helpers/truncate-word';
+import { formatDate } from '@/app/helpers/format-date';
 
 
 export async function generateStaticParams() {
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: { params: { locale: string; i
   const { data } = response;
   const evento: EventoSingle = data; 
 
-  const siteUrl = "https://www.tudominio.com"; // IMPORTANTE: Reemplaza con la URL base de tu sitio web
+  const siteUrl = "https://www.fsolidaritycolombia.org"; // IMPORTANTE: Reemplaza con la URL base de tu sitio web
 
   if (!evento) {
     return {
@@ -112,18 +113,20 @@ export default async function EventoDetailPage({ params }: { params: { id: strin
           {data.Titulo || 'Evento sin título'}
         </h2>
         {data.imagen && data.imagen.length > 0 && (
-          <div className="w-100 h-72 md:h-96 mb-8 overflow-hidden rounded-2xl shadow-lg">
+          <div className='flex justify-center'>
+            <div className="w-100 h-72 md:h-96 mb-8 overflow-hidden rounded-2xl shadow-lg">
 
-            <Carousel 
-                imgs={data.imagen} 
-                hasMultipleImages={data.imagen.length > 1}
-                navigation={true}
-            />
+              <Carousel 
+                  imgs={data.imagen} 
+                  hasMultipleImages={data.imagen.length > 1}
+                  navigation={true}
+              />
+            </div>
           </div>
         )}
         {data.fecha && (
           <p className="text-purple-600 font-semibold text-lg text-center mb-6">
-            Fecha: {data.fecha.toLocaleString('es-ES')}
+            Fecha: { formatDate( data.fecha ) }
           </p>
         )}
         {data.descripcion && (

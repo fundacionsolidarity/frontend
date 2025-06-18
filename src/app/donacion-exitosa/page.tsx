@@ -8,7 +8,7 @@ export async function generateMetadata( ) {
   const keywords = "donación exitosa, gracias por donar, Fundación Solidarity Colombia, ayuda, apoyo, impacto social";
   
   const imageUrl = "https://placehold.co/1200x630/4CAF50/FFFFFF?text=Donacion+Exitosa"; 
-  const siteUrl = "https://www.tudominio.com"; // **IMPORTANTE: Reemplaza con la URL base de tu sitio web**
+  const siteUrl = "https://www.fsolidaritycolombia.org/"; // **IMPORTANTE: Reemplaza con la URL base de tu sitio web**
 
   return {
     // Título principal de la página (aparece en la pestaña del navegador)

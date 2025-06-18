@@ -41,8 +41,8 @@ const Carousel: React.FunctionComponent<CarouselProps> = ({ imgs, hasMultipleIma
               <Image
                 src={img.url}
                 alt={`${img.name} - Imagen ${index + 1}`}
-                width={500}
-                height={500}
+                width={600}
+                height={600}
                 priority={index === 0}
                 className="h-full w-full object-cover rounded-xl"
               />

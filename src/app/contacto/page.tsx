@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const keywords = "Fundación Solidarity Colombia contacto, formulario de contacto, preguntas, colaborar, ayuda, información";
 
   const imageUrl = "https://placehold.co/1200x630/B0E0E6/FFFFFF?text=Contacto+FSC"; 
-  const siteUrl = "https://www.tudominio.com"; 
+  const siteUrl = "https://www.fsolidaritycolombia.org/"; 
 
   return {
     title: title,

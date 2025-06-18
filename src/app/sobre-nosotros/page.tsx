@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const description = "Conoce la misión, visión, historia y el equipo detrás de la Fundación Solidarity Colombia. Descubre cómo empoderamos a niñas y jóvenes en situación de vulnerabilidad.";
   const keywords = "Fundación Solidarity Colombia, misión, visión, historia, equipo, valores, impacto social, empoderamiento, vulnerabilidad, Colombia";
   const imageUrl = "https://placehold.co/1200x630/6A5ACD/FFFFFF?text=Sobre+Nosotros+FSC";
-  const siteUrl = "https://www.tudominio.com";
+  const siteUrl = "https://www.fsolidaritycolombia.org";
 
   return {
     title: title,

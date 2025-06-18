@@ -4,6 +4,7 @@ import { Evento } from "@/app/eventos/interfaces/request-http";
 import Carousel from "./Carousel";
 import Link from "next/link";
 import { truncateWords } from "../helpers/truncate-word";
+import { formatDate } from "../helpers/format-date";
 
 
 interface EventoPreviewSliderProps {
@@ -42,7 +43,12 @@ export default function EventoPreviewSlider({ evento }: EventoPreviewSliderProps
         />
       </div>
       <h3 className="text-xl font-bold text-gray-800 mb-2">{evento.Titulo}</h3>
-      {/* <p className="text-purple-600 font-semibold text-sm mb-3">{evento.fecha?.getDay()  }</p> */}
+      {
+        evento.fecha && (
+          <p className="text-purple-600 font-semibold text-sm mb-3">{ formatDate( evento.fecha )  }</p>
+        )
+      }
+      
       <p className="text-gray-600 text-sm leading-relaxed"> { truncateWords( evento.descripcion, 100 ) } </p>
       <Link
         href={`/eventos/${evento.documentId}`} // La ruta dinámica a la página de detalle, usando documentId

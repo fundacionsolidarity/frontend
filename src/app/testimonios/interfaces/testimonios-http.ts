@@ -1,9 +1,9 @@
 export interface TestimonioRequest {
-    data: Datum[];
+    data: Testimonio[];
     meta: Meta;
 }
 
-export interface Datum {
+export interface Testimonio {
     id:          number;
     documentId:  string;
     destacado:   null;

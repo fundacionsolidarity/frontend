@@ -17,15 +17,15 @@ export default async function Hero() {
 
 
       <div className="relative z-10 max-w-3xl mx-auto space-y-6 animate-fade-in-up">
-        <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-lg animate-text-pop-in">
+        <h2 className="text-4xl md:text-6xl font-extrabold text-gray-800 leading-tight drop-shadow-lg animate-text-pop-in">
           {data.titulo || "Bienvenido a nuestro espacio"}
         </h2>
-        <p className="text-lg md:text-xl text-white opacity-90 drop-shadow-md animate-fade-in-up delay-500">
+        <p className="text-lg md:text-xl text-gray-800 opacity-90 drop-shadow-md animate-fade-in-up delay-500">
           {data.subtitulo || "Un lugar donde la comunidad se une para crecer y aprender juntos."}
         </p>
         <a
           href={  data.cta_link || "#"}
-          className="inline-block px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold text-lg rounded-full shadow-lg
+          className="inline-block px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-gray-800 font-bold text-lg rounded-full shadow-lg
                     hover:from-purple-700 hover:to-pink-700 transform hover:scale-105 transition-all duration-300 ease-in-out
                     animate-button-bounce"
         >
