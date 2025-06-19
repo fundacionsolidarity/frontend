@@ -3,6 +3,7 @@ import Hero from "@/app/components/Hero";;
 import { Pilares } from "./components/Pilares";
 import { HistoriasInspiradorasSection } from "./components/HistoriasInspiradorasSection";
 import { CallToActionSection } from "./components/CallToActionSection";
+import FeaturedEventsSection from "./components/FeaturedEvents";
 
 export async function generateStaticParams() {
   return [
@@ -54,6 +55,7 @@ export default async function Home() {
     <>
       <Hero />
       <Pilares />
+      <FeaturedEventsSection />
       <HistoriasInspiradorasSection />
       <CallToActionSection />
     </>
