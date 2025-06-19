@@ -3,10 +3,8 @@ import { useState, useEffect } from 'react';
 import { Evento, EventRequest } from '../eventos/interfaces/request-http';
 import { fetchAPI } from '../lib/api';
 import EventoPreviewSlider from './EventoPreview';
+import Link from 'next/link';
 
-const MockLink = ({ href, children, className }) => (
-  <a href={href} className={className}>{children}</a>
-);
 
 
 
@@ -79,13 +77,13 @@ const FeaturedEventsSection = () => {
         )}
 
         <div className="text-center">
-          <MockLink
-            href="/todos-los-eventos" // Reemplaza con la URL real de tu página de todos los eventos
+          <Link
+            href="/eventos" 
             className="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-700 text-white font-bold text-lg rounded-full shadow-lg
                        hover:from-purple-700 hover:to-indigo-800 transform hover:scale-105 transition-all duration-300 ease-in-out"
           >
             Ver Todos los Eventos
-          </MockLink>
+          </Link>
         </div>
       </div>
 
